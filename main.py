@@ -8,7 +8,7 @@ import json
 import atexit
 from typing import Any
 
-printer_ip = "192.168.236.130"  # change to your printer ip
+printer_ip = json.load(open("config.json", "r"))["ip"]  # change to your printer ip
 url = "http://{}:8080/?action=snapshot".format(printer_ip)
 
 os.makedirs("images", exist_ok=True)
